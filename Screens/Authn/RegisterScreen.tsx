@@ -1,8 +1,8 @@
 import { Text, View, TouchableOpacity, GestureResponderEvent, StyleSheet } from "react-native";
 
-const RegisterScreen = (props) => {
+const RegisterScreen = ({props}) => {
 
-    function handleSubmitPress(event: GestureResponderEvent): void {
+    function handleSubmitPress(): void {
         props.navigation.navigate('LoginScreen');
     }
 
