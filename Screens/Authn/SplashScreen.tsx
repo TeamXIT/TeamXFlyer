@@ -6,7 +6,6 @@ const SplashScreen = ({ navigation }) => {
     const [animating, setAnimating] = useState(true);
 
     useEffect(() => {
-        console.log("UseEffectCalling");
         setAnimating(false);
         //Check if user_id is set or not
         //If not then send for Authentication
@@ -22,7 +21,7 @@ const SplashScreen = ({ navigation }) => {
         <View style={styles.container}>
             <Image source={require('../../images/OIP.jpg')}
                 style={styles.image} />
-                
+
             <ActivityIndicator
                 animating={animating}
                 color="#FFFFFF"
