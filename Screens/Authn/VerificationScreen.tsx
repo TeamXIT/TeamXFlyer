@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, Button, StyleSheet, TextInput, TouchableOpacity, Image } from 'react-native';
+import { View, Text, Button, StyleSheet, TextInput, TouchableOpacity,Image } from 'react-native';
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const handleResendOTP = () => {
@@ -12,8 +12,9 @@ const VerificationScreen = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
-      <Image source={require('../../image/verfication.png')} style={styles.logo} />
+       <Image source={require('../../image/verfication.png')} style={styles.logo} />
       <Text style={styles.title}>Verify Mobile Number</Text>
+
       {/* Use forward slashes and correct the image filename */}
       <Text style={styles.centeredText}>
         PG has been sent to you on your mobile number, please enter your number
@@ -45,7 +46,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     padding: 16,
-    backgroundColor: 'black',
+    backgroundColor: 'black', 
   },
   title: {
     fontSize: 25,
@@ -66,19 +67,19 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     marginBottom: 16,
     width: '80%',
-
+    
   },
   textInput: {
     padding: 8,
     color: 'white',
-
+    
   },
   logo: {
     width: 50,
     height: 50,
     marginBottom: 16,
   },
-
+  
 });
 
 export default VerificationScreen;

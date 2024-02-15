@@ -5,7 +5,6 @@ const RegisterScreen = (props) => {
     function handleSubmitPress(): void {
         props.navigation.navigate('VerificationScreen');
     }
-
     return (
         <View>
             <Text>Registration</Text>

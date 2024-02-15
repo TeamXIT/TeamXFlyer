@@ -45,8 +45,7 @@ const Authn = () => {
     },
     headerTintColor: '#25242C', // Set Header text color
     headerTitleStyle: {
-      fontWeight: 'bold', // Set Header text style  
-            
+      fontWeight: 'bold', // Set Header text style          
     },
     
   }}
