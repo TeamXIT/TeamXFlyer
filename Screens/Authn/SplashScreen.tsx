@@ -22,6 +22,7 @@ const SplashScreen = ({ navigation }) => {
         <View style={styles.container}>
             <Image source={require('../../images/OIP.jpg')}
                 style={styles.image} />
+                
             <ActivityIndicator
                 animating={animating}
                 color="#FFFFFF"
