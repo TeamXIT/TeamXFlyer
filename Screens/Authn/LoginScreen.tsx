@@ -41,14 +41,13 @@ const LoginScreen = ({ navigation }) => {
             <Text>Welcome to Login</Text>
 
             <TextInput placeholder="Enter Name" onChangeText={(name) => {
-                console.log(name);
                 setName(name);
             }} style={{ borderColor: '#EDC7C6' }} />
-            <Text></Text>
+            <Text>{name}</Text>
             <TextInput placeholder="Enter Password" onChangeText={(password) => {
-                console.log(password);
                 setPassword(password);
             }} style={{ borderColor: '#EDC7C6' }} />
+             <Text>{password}</Text>
             <TouchableOpacity
                 style={styles.buttonStyle}
                 activeOpacity={0.5}

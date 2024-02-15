@@ -26,8 +26,7 @@ const SplashScreen = ({ navigation }) => {
                 animating={animating}
                 color="#FFFFFF"
                 size="large"
-                style={styles.activityIndicator}
-            />
+                style={styles.activityIndicator} />
         </View>
     )
 }
