@@ -6,19 +6,17 @@ const SplashScreen = ({ navigation }) => {
     const [animating, setAnimating] = useState(true);
 
     useEffect(() => {
-        setTimeout(() => {
-            setAnimating(false);
-            //Check if user_id is set or not
-            //If not then send for Authentication
-            //else send to Home Screen
-            AsyncStorage.getItem('user_id').then((value) =>
-                navigation.replace(
-                    value === null ? 'Authn' : 'Dashboard'
-                ),
-            );
-        }, 5000);
+        console.log("UseEffectCalling");
+        setAnimating(false);
+        //Check if user_id is set or not
+        //If not then send for Authentication
+        //else send to Home Screen
+        AsyncStorage.getItem('userid').then((value) =>
+            navigation.replace(
+                value === null ? 'Authn' : 'Dashboard'
+            ),
+        );
     }, []);
-
 
     return (
         <View style={styles.container}>
