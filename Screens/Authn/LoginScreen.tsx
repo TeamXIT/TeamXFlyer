@@ -2,19 +2,14 @@ import {
     TouchableOpacity,
     Text,
     StyleSheet,
-    GestureResponderEvent,
     Alert,
     View
 } from "react-native";
-import React, { useState, createRef } from 'react';
+import React, { useState } from 'react';
 import { TextInput } from "react-native-gesture-handler";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const LoginScreen = ({ navigation }) => {
-
-    const [intValue, setIntValue] = useState(0);
-    const [strungValue, setStringValue] = useState('');
-    const [boolValue, setBoolValue] = useState(false);
 
     const [name, setName] = useState('');
     const [password, setPassword] = useState('');
@@ -29,11 +24,12 @@ const LoginScreen = ({ navigation }) => {
             return;
         }
         Alert.alert("Valid", "Success!");
-        //AsyncStorage.setItem('user_id', name);
+        navigation.replace('Dashboard');
+        //AsyncStorage.setItem("userid", name);
     }
 
     function handleNavigationPress(): void {
-        navigation.navigate('RegisterScreen')
+        navigation.navigate('RegisterScreen');
     }
 
     return (

@@ -10,7 +10,9 @@ const SplashScreen = ({ navigation }) => {
         //Check if user_id is set or not
         //If not then send for Authentication
         //else send to Home Screen
-        AsyncStorage.getItem('userid').then((value) =>
+        
+        //AsyncStorage.removeItem('userid');
+        AsyncStorage.getItem('userid1').then((value) =>
             navigation.replace(
                 value === null ? 'Authn' : 'Dashboard'
             ),
