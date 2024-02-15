@@ -8,6 +8,7 @@ import RegisterScreen from './Screens/Authn/RegisterScreen';
 
 import SplashScreen from './Screens/Authn/SplashScreen';
 import Dashboard from './Screens/Dashboard/Dashboard';
+import VerificationScreen from './Screens/Authn/VerificationScreen';
 
 const Stack = createStackNavigator();
 
@@ -34,7 +35,23 @@ const Authn = () => {
           },
         }}
       />
-    </Stack.Navigator>
+      <Stack.Screen
+     name="VerificationScreen"
+      component={VerificationScreen}
+     options={{
+    title: 'SIGN UP-STEP2/3', // Set Header Title
+    headerStyle: {
+      backgroundColor: '#D2A526', // Set Header color
+    },
+    headerTintColor: '#25242C', // Set Header text color
+    headerTitleStyle: {
+      fontWeight: 'bold', // Set Header text style  
+            
+    },
+    
+  }}
+/>
+</Stack.Navigator>
   );
 };
 
@@ -60,6 +77,12 @@ function App(): React.JSX.Element {
         <Stack.Screen
           name="Dashboard"
           component={Dashboard}
+          // Hiding header for Navigation Drawer
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="VerificationScreen"
+          component={Authn}
           // Hiding header for Navigation Drawer
           options={{ headerShown: false }}
         />
