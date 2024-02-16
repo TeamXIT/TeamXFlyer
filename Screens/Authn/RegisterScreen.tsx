@@ -2,18 +2,11 @@ import {
     TouchableOpacity,
     Text,
     StyleSheet,
-    GestureResponderEvent,
-    Alert,
-    View,
-    TouchableWithoutFeedback,
-    Keyboard,
-
-    Button,
+    View
+    ,
 } from "react-native";
-import React, { useState, createRef } from 'react';
+import React, {  } from 'react';
 import { TextInput } from "react-native-gesture-handler";
-import AsyncStorage from "@react-native-async-storage/async-storage";
-import { blue } from "react-native-reanimated/lib/typescript/reanimated2/Colors";
 const RegisterScreen = (props) => {
 
     function handleSubmitPress(): void {
@@ -114,11 +107,4 @@ const styles = StyleSheet.create({
         fontSize:15,
         color:'#ffffff'
     },
-    
-    
-    
-    
-    
-    
-  
 });
