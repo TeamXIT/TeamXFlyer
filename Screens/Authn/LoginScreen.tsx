@@ -1,93 +1,87 @@
-import {
-    TouchableOpacity,
-    Text,
-    StyleSheet,
-    Alert,
-    View
-} from "react-native";
-import React, { useState } from 'react';
-import { TextInput } from "react-native-gesture-handler";
-import AsyncStorage from "@react-native-async-storage/async-storage";
-
-const LoginScreen = ({ navigation }) => {
-
-    const [name, setName] = useState('');
-    const [password, setPassword] = useState('');
-   
-    function handleSubmitPress(): void {
-        if (!name) {
-            Alert.alert("Invalid", "Enter User Name");
+import { StyleSheet, Text, View, TouchableOpacity, TextInput, Alert, Pressable, } from 'react-native';
+import { createStackNavigator } from '@react-navigation/stack'
+import { useState } from 'react';
+const Stack = createStackNavigator()
+export default function Login({ navigation }) {
+    const [mailID, setmailID] = useState('');
+    const [password,setpassword] = useState('');
+    const onSubmit = () => {
+        if (!mailID) {
+            Alert.alert('Invalid', 'Enter User Name:');
             return;
         }
         if (!password) {
-            Alert.alert("Invalid", "Enter password");
+            Alert.alert('Invalid', 'Enter Password:');
             return;
         }
-        Alert.alert("Valid", "Success!");
-        navigation.replace('Dashboard');
-        //AsyncStorage.setItem("userid", name);
-    }
-
-    function handleNavigationPress(): void {
-        navigation.navigate('RegisterScreen');
+        Alert.alert('Valid','Success')
+        navigation.replace("Dashboard");
     }
 
     return (
-        <View>
-            <Text>Welcome to Login</Text>
-
-            <TextInput placeholder="Enter Name" onChangeText={(name) => {
-                setName(name);
-            }} style={{ borderColor: '#EDC7C6' }} />
-            <Text>{name}</Text>
-            <TextInput placeholder="Enter Password" onChangeText={(password) => {
-                setPassword(password);
-            }} style={{ borderColor: '#EDC7C6' }} />
-             <Text>{password}</Text>
-            <TouchableOpacity
-                style={styles.buttonStyle}
-                activeOpacity={0.5}
-                onPress={handleSubmitPress}>
-                <Text style={styles.buttonTextStyle}>USER LOGIN</Text>
-            </TouchableOpacity>
-            <TouchableOpacity
-                style={styles.buttonStyle}
-                activeOpacity={0.5}
-                onPress={handleNavigationPress}>
-                <Text style={styles.buttonTextStyle}>Registration</Text>
-            </TouchableOpacity>
+        <View style={styles.container}>
+            <Text style={styles.content}>Welcome Back!</Text>
+            <Text style={{color:'#fff',fontSize:18,letterSpacing:1.5,marginBottom:15,marginTop:10}}>Login to continue</Text>
+            <TextInput placeholder='Mail ID' placeholderTextColor="#fff" style={styles.input} onChangeText={(mailID) => { setmailID(mailID) }}></TextInput>
+            
+            <TextInput placeholder='Password' placeholderTextColor="#fff" style={styles.input} onChangeText={(password) => { setpassword(password) }}></TextInput>
+           <Pressable onPress={()=>{Alert.alert('forgot Password')}}> 
+           <Text style={{color:'#000',fontSize:18,textDecorationLine:'underline', marginBottom:25,marginTop:10}}>Forgot Password?</Text>
+           </Pressable>
+            <TouchableOpacity style={styles.button} onPress={onSubmit}><Text style={styles.buttonText }>Login</Text></TouchableOpacity>
+            <Pressable onPress={()=>{navigation.navigate('RegisterScreen')}}> 
+           <Text style={{color:'#000',fontSize:20,fontWeight:'bold',textDecorationLine:'underline', marginBottom:25,marginTop:220}}>CREATE ACCOUNT</Text>
+           </Pressable>
         </View>
-    )
-};
-
-export default LoginScreen;
+    );
+}
 
 const styles = StyleSheet.create({
-    mainContainer: {
+    container: {
         flex: 1,
-        justifyContent: 'center',
-        backgroundColor: "#000000",
-        alignContent: 'center',
-        paddingLeft: 25,
-        paddingRight: 25,
-    },
-    buttonStyle: {
-        backgroundColor: '#7DE24E',
-        borderWidth: 0,
-        color: '#FFFFFF',
-        borderColor: '#7DE24E',
-        height: 40,
+        backgroundColor: '#D2A526',
         alignItems: 'center',
-        borderRadius: 30,
-        marginLeft: 35,
-        marginRight: 35,
-        marginTop: 20,
-        marginBottom: 25,
-    },
-    buttonTextStyle: {
-        color: '#FFFFFF',
-        paddingVertical: 10,
-        fontSize: 16,
-    },
+        justifyContent: 'center',
+        borderWidth: 6,
+        padding:5,
+        borderColor: 'white',
+        borderRadius:35,
+        position:'relative',
+        
 
+    },
+    button: {
+        backgroundColor: '#25242C',
+        padding: 10,
+        height:60,
+        width: 350,
+        borderRadius: 35,
+        marginBottom: 20,
+        top: 20,
+       
+    },
+    buttonText: {
+        color: 'white',
+        fontSize: 24,
+        textAlign: 'center',
+        fontWeight: 'bold',
+    },
+    input:{
+        borderBottomWidth: 2,
+        borderBottomColor: 'white',
+        paddingVertical: 5,
+        color:'#fff',
+        margin:15,
+        width:'80%',
+        paddingBottom:15,
+        fontSize: 22,
+       
+    },
+    content:{
+        fontSize:32,
+        color:'#fff',
+        marginTop:150,
+        fontWeight:'600',
+        letterSpacing:2
+    }
 });
