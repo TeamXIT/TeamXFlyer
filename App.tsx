@@ -8,6 +8,7 @@ import RegisterScreen from './Screens/Authn/RegisterScreen';
 
 import SplashScreen from './Screens/Authn/SplashScreen';
 import Dashboard from './Screens/Dashboard/Dashboard';
+import VerificationScreen from './Screens/Authn/VerificationScreen';
 
 const Stack = createStackNavigator();
 
@@ -18,14 +19,15 @@ const Authn = () => {
       <Stack.Screen
         name="LoginScreen"
         component={LoginScreen}
-        options={{headerShown: false}}
-      />
+        options={{ headerShown: false }} />
       <Stack.Screen
         name="RegisterScreen"
         component={RegisterScreen}
-        options={{headerShown: false}}
-
-    />
+        options={{ headerShown: false }} />
+      <Stack.Screen
+        name="VerificationScreen"
+        component={VerificationScreen}
+        options={{ headerShown: false }} />
     </Stack.Navigator>
   );
 };

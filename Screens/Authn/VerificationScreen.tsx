@@ -1,18 +1,18 @@
 import React, { useState } from 'react';
-import { View, Text, Button, StyleSheet, TextInput, TouchableOpacity,Image } from 'react-native';
+import { View, Text, Button, StyleSheet, TextInput, TouchableOpacity, Image } from 'react-native';
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const handleResendOTP = () => {
   console.log("Resend OTP logic");
 };
 
-const VerificationScreen = ({ navigation }) => {
+const VerificationScreen = (props) => {
   const [stringValue, setStringValue] = useState('');
   const [mobileNumber, setMobileNumber] = useState('');
 
   return (
     <View style={styles.container}>
-       <Image source={require('../../image/verfication.png')} style={styles.logo} />
+      <Image source={require('../../image/verfication.png')} style={styles.logo} />
       <Text style={styles.title}>Verify Mobile Number</Text>
 
       {/* Use forward slashes and correct the image filename */}
@@ -35,7 +35,7 @@ const VerificationScreen = ({ navigation }) => {
         <Text style={[styles.centeredText, styles.underlineText]}>Didn't receive OTP?</Text>
       </TouchableOpacity>
 
-      <Button title="Change Number" onPress={() => console.log('Change number pressed')} />
+      <Button title="Change Number" onPress={() => props.navigation.navigate("LoginScreen")} />
     </View>
   );
 };
@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     padding: 16,
-    backgroundColor: 'black', 
+    backgroundColor: 'black',
   },
   title: {
     fontSize: 25,
@@ -67,12 +67,12 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     marginBottom: 16,
     width: '80%',
-    
+
   },
   textInput: {
     padding: 8,
     color: 'white',
-    
+
   },
   logo: {
     width: 50,
@@ -82,7 +82,7 @@ const styles = StyleSheet.create({
   underlineText: {
     textDecorationLine: 'underline',
   },
-  
+
 });
 
 export default VerificationScreen;

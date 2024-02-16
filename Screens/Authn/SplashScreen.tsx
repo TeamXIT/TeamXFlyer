@@ -6,7 +6,6 @@ const SplashScreen = ({ navigation }) => {
     const [animating, setAnimating] = useState(true);
 
     useEffect(() => {
-        console.log("UseEffectCalling");
         setAnimating(false);
         //Check if user_id is set or not
         //If not then send for Authentication

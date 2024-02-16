@@ -15,7 +15,7 @@ export default function Login({ navigation }) {
             return;
         }
         Alert.alert('Valid','Success')
-        navigation.navigate("RegisterScreen");
+        navigation.replace("Dashboard");
     }
 
     return (
@@ -83,7 +83,5 @@ const styles = StyleSheet.create({
         marginTop:150,
         fontWeight:'600',
         letterSpacing:2
-        
-        
     }
 });
