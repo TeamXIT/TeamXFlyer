@@ -23,17 +23,9 @@ const Authn = () => {
       <Stack.Screen
         name="RegisterScreen"
         component={RegisterScreen}
-        options={{
-          title: 'Register', //Set Header Title
-          headerStyle: {
-            backgroundColor: '#307ecc', //Set Header color
-          },
-          headerTintColor: '#fff', //Set Header text color
-          headerTitleStyle: {
-            fontWeight: 'bold', //Set Header text style
-          },
-        }}
-      />
+        options={{headerShown: false}}
+
+    />
     </Stack.Navigator>
   );
 };
