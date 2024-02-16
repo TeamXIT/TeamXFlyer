@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { View, Text, Button, StyleSheet, TextInput, TouchableOpacity, Image } from 'react-native';
-import AsyncStorage from "@react-native-async-storage/async-storage";
+
 
 const handleResendOTP = () => {
   console.log("Resend OTP logic");
 };
 
-const VerificationScreen = (props) => {
+const VerificationScreen = ({navigation}) => {
   const [stringValue, setStringValue] = useState('');
   const [mobileNumber, setMobileNumber] = useState('');
 
@@ -35,7 +35,7 @@ const VerificationScreen = (props) => {
         <Text style={[styles.centeredText, styles.underlineText]}>Didn't receive OTP?</Text>
       </TouchableOpacity>
 
-      <Button title="Change Number" onPress={() => props.navigation.navigate("LoginScreen")} />
+      <Button title="Change Number" onPress={() => navigation.navigate("LoginScreen")} />
     </View>
   );
 };
