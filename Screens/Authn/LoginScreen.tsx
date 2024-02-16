@@ -15,13 +15,14 @@ export default function Login({ navigation }) {
             return;
         }
         Alert.alert('Valid','Success')
+        navigation.navigate("RegisterScreen");
     }
 
     return (
         <View style={styles.container}>
             <Text style={styles.content}>Welcome Back!</Text>
             <Text style={{color:'#fff',fontSize:18,letterSpacing:1.5,marginBottom:15,marginTop:10}}>Login to continue</Text>
-            <TextInput placeholder='Mail ID' placeholderTextColor="#fff" style={styles.input} onChangeText={(malID) => { setmailID(mailID) }}></TextInput>
+            <TextInput placeholder='Mail ID' placeholderTextColor="#fff" style={styles.input} onChangeText={(mailID) => { setmailID(mailID) }}></TextInput>
             
             <TextInput placeholder='Password' placeholderTextColor="#fff" style={styles.input} onChangeText={(password) => { setpassword(password) }}></TextInput>
            <Pressable onPress={()=>{Alert.alert('forgot Password')}}> 
