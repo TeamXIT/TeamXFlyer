@@ -10,7 +10,9 @@ const SplashScreen = ({ navigation }) => {
         //Check if user_id is set or not
         //If not then send for Authentication
         //else send to Home Screen
-        AsyncStorage.getItem('userid').then((value) =>
+        
+        //AsyncStorage.removeItem('userid');
+        AsyncStorage.getItem('userid1').then((value) =>
             navigation.replace(
                 value === null ? 'Authn' : 'Dashboard'
             ),
@@ -21,12 +23,12 @@ const SplashScreen = ({ navigation }) => {
         <View style={styles.container}>
             <Image source={require('../../images/OIP.jpg')}
                 style={styles.image} />
+
             <ActivityIndicator
                 animating={animating}
                 color="#FFFFFF"
                 size="large"
-                style={styles.activityIndicator}
-            />
+                style={styles.activityIndicator} />
         </View>
     )
 }
