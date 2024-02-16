@@ -1,6 +1,4 @@
-import { StatusBar } from 'react-native';
-import { StyleSheet, Text, View, Image, TouchableOpacity, ImageBackground, TextBase, TextInput, Alert, Pressable, } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
+import { StyleSheet, Text, View, TouchableOpacity, TextInput, Alert, Pressable, } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack'
 import { useState } from 'react';
 const Stack = createStackNavigator()
