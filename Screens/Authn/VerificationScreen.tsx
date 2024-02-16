@@ -32,7 +32,7 @@ const VerificationScreen = ({ navigation }) => {
       </View>
 
       <TouchableOpacity onPress={handleResendOTP}>
-        <Text style={styles.centeredText}>Don't received otp?</Text>
+        <Text style={[styles.centeredText, styles.underlineText]}>Didn't receive OTP?</Text>
       </TouchableOpacity>
 
       <Button title="Change Number" onPress={() => console.log('Change number pressed')} />
@@ -78,6 +78,9 @@ const styles = StyleSheet.create({
     width: 50,
     height: 50,
     marginBottom: 16,
+  },
+  underlineText: {
+    textDecorationLine: 'underline',
   },
   
 });
