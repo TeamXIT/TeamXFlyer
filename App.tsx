@@ -9,6 +9,7 @@ import RegisterScreen from './Screens/Authn/RegisterScreen';
 import SplashScreen from './Screens/Authn/SplashScreen';
 import Dashboard from './Screens/Dashboard/Dashboard';
 import VerificationScreen from './Screens/Authn/VerificationScreen';
+import ProfileScreen from './Screens/Dashboard/ProfileScreen';
 
 const Stack = createStackNavigator();
 
@@ -19,7 +20,7 @@ const Authn = () => {
       <Stack.Screen
         name="LoginScreen"
         component={LoginScreen}
-        options={{headerShown: false}}
+        options={{ headerShown: false }}
       />
       <Stack.Screen
         name="RegisterScreen"
@@ -35,22 +36,52 @@ const Authn = () => {
           },
         }}
       />
+
       <Stack.Screen
-     name="VerificationScreen"
-      component={VerificationScreen}
-     options={{
-    title: 'SIGN UP-STEP2/3', // Set Header Title
-    headerStyle: {
-      backgroundColor: '#D2A526', // Set Header color
-    },
-    headerTintColor: '#25242C', // Set Header text color
-    headerTitleStyle: {
-      fontWeight: 'bold', // Set Header text style          
-    },
-    
-  }}
-/>
-</Stack.Navigator>
+        name="VerificationScreen"
+        component={VerificationScreen}
+        options={{
+          title: 'SIGN UP-STEP2/3', // Set Header Title
+          headerStyle: {
+            backgroundColor: '#D2A526', // Set Header color
+          },
+          headerTintColor: '#25242C', // Set Header text color
+          headerTitleStyle: {
+            fontWeight: 'bold', // Set Header text style          
+          },
+
+        }}
+      />
+     <Stack.Screen
+        name="ProfileScreen"
+        component={ProfileScreen}
+        options={{
+          title: '',
+          headerStyle: {
+            backgroundColor: 'black',
+          },
+          headerTintColor: 'white',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
+        }}
+      />
+      <Stack.Screen
+        name="Dashboard"
+        component={Dashboard}
+        options={{
+          title: 'Dashboard',
+          headerStyle: {
+            backgroundColor: '#D2A526',
+          },
+          headerTintColor: '#25242C',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
+        }}
+      />
+
+    </Stack.Navigator>
   );
 };
 
@@ -85,6 +116,14 @@ function App(): React.JSX.Element {
           // Hiding header for Navigation Drawer
           options={{ headerShown: false }}
         />
+        <Stack.Screen
+          name="ProfileScreen"
+          component={Authn}
+          // Hiding header for Navigation Drawer
+          options={{ headerShown: false }}
+        />
+
+        
       </Stack.Navigator>
     </NavigationContainer>
   );
