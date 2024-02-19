@@ -5,8 +5,8 @@ type profile={
 const  ProfileComponent=(field: profile)=>{
     return(
         <View style={styles.container}>
-            <Image  style={styles.img}source={require(field.Image)}/>
-            <TouchableOpacity onPress={()=>{Alert.alert('Image')} }style={styles.smallbtn}>
+            <Image  style={styles.img}source={field.Image}/>
+            <TouchableOpacity onPress={()=>Alert.alert('Edit Image')}style={styles.smallbtn}>
                 <Image style={{height:35,width:35}}source={require('../assets/camera.png')}/>
             </TouchableOpacity>
         </View>
