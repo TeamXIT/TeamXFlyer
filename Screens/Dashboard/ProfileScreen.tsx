@@ -1,7 +1,8 @@
 // ProfileScreen.js
 import React from 'react';
-import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, Image, StyleSheet, TouchableOpacity, Alert } from 'react-native';
 import SettingItemComponent from '../molecule/SettingItemComponent';
+import ImageitemComponent from '../molecule/ImageitemComponent'
 
 const ProfileScreen = () => {
   const handlePrivacyPress = () => {
@@ -36,6 +37,9 @@ const ProfileScreen = () => {
   const HandleOPress = (value: string) => {
     console.log('Selected value is: ', value);
   };
+ 
+ 
+ 
 
 
   const handleLightThemeImagePress = () => {
@@ -48,17 +52,15 @@ const ProfileScreen = () => {
         <TouchableOpacity onPress={handleLightThemeImagePress}>
           <Image source={require('../../profileimage/lighttheme1.png')} style={styles.lightThemeImage} />
         </TouchableOpacity>
-        <View style={styles.profilePictureContainer}>
-          <Image source={require('../../profileimage/profile.jpg')} style={styles.profilePicture} />
-        </View>
-        <Text style={styles.profileName}>Chaitanya</Text>
+      <ImageitemComponent
+            Image={require('../../images/profileImage.jpg')}/>
+    <Text style={styles.profileName}>Chaitanya</Text>
         <Text style={styles.email}>janachaitanya1234@gamil.com</Text>
       </View>
 
       <TouchableOpacity style={styles.upgradeButton} onPress={() => console.log('Upgrade to Pro')}>
         <Text style={styles.upgradeButtonText}>Upgrade to Pro</Text>
       </TouchableOpacity>
-
       <SettingItemComponent
         ImageOne={require('../../profileimage/privacy.png')}
         Content={'Privacy'}
