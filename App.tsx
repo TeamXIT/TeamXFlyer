@@ -8,6 +8,10 @@ import RegisterScreen from './Screens/Authn/RegisterScreen';
 
 import SplashScreen from './Screens/Authn/SplashScreen';
 import Dashboard from './Screens/Dashboard/Dashboard';
+import UpgradeScreen from './Screens/Authn/UpgradeScreen';
+import { nativeViewGestureHandlerProps } from 'react-native-gesture-handler/lib/typescript/handlers/NativeViewGestureHandler';
+import { tapGestureHandlerProps } from 'react-native-gesture-handler/lib/typescript/handlers/TapGestureHandler';
+
 
 const Stack = createStackNavigator();
 
@@ -25,6 +29,13 @@ const Authn = () => {
         component={RegisterScreen}
         options={{headerShown: false}}
 
+    />
+    <Stack.Screen
+  name="UpgradeScreen"
+  component={UpgradeScreen}
+  options={{headerShown: true}}
+
+  
     />
     </Stack.Navigator>
   );
@@ -54,6 +65,7 @@ function App(): React.JSX.Element {
           component={Dashboard}
           // Hiding header for Navigation Drawer
           options={{ headerShown: false }}
+          
         />
       </Stack.Navigator>
     </NavigationContainer>

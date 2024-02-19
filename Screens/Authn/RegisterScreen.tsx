@@ -12,6 +12,9 @@ const RegisterScreen = (props) => {
     function handleSubmitPress(): void {
         props.navigation.navigate('LoginScreen');
     }
+    function handleCreateSubmit(): void {
+        props.navigation.navigate('UpgradeScreen');
+    }
 
     return (
         <View style={styles.viewbackground}>
@@ -27,6 +30,7 @@ const RegisterScreen = (props) => {
             <TouchableOpacity
                 style={styles.buttonStyle}
                 activeOpacity={0.5}
+                onPress={handleCreateSubmit}
             >
                 <Text style={styles.buttonTextStyle}>Create</Text>
             </TouchableOpacity>
