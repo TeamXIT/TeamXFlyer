@@ -10,6 +10,7 @@ import SplashScreen from './Screens/Authn/SplashScreen';
 import Dashboard from './Screens/Dashboard/Dashboard';
 import VerificationScreen from './Screens/Authn/VerificationScreen';
 import ProfileScreen from './Screens/Dashboard/ProfileScreen';
+import CustomImage from './Screens/Dashboard/CustomImage';
 
 const Stack = createStackNavigator();
 

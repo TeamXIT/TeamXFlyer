@@ -1,6 +1,7 @@
 // ProfileScreen.js
 import React from 'react';
 import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native';
+import CustomImage from './CustomImage'
 
 const ProfileScreen = () => {
   const handlePrivacyPress = () => {
@@ -36,16 +37,21 @@ const ProfileScreen = () => {
     console.log('Light theme image pressed');
 
   };
-
+  const handleImagePress = () => {
+    console.log('Image touched!');
+};
+  
   return (
     <View style={styles.container}>
       <View style={styles.profileContainer}>
         <TouchableOpacity onPress={handleLightThemeImagePress}>
           <Image source={require('../../profileimage/lighttheme1.png')} style={styles.lightThemeImage} />
         </TouchableOpacity>
-        <View style={styles.profilePictureContainer}>
-          <Image source={require('../../profileimage/profile.jpg')} style={styles.profilePicture} />
-        </View>
+      
+        <CustomImage
+          image={require('../../profileimage/imagecom.png')}
+          onPress={handleImagePress}
+        />
         <Text style={styles.profileName}>Chaitanya</Text>
         <Text style={styles.email}>janachaitanya1234@gamil.com</Text>
       </View>
