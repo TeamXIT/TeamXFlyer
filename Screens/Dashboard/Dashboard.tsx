@@ -1,11 +1,16 @@
-import { useEffect } from "react";
-import { Text } from "react-native";
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import HomeScreen from "./HomeScreen";
+import MeetingScreen from "./MeetingScreen";
+import SettingsScreen from "./SettingsScreen";
 
-const Dashboard =() =>{
-
-
+const Tab = createBottomTabNavigator();
+const Dashboard = () => {
     return (
-        <Text>Dashboard</Text>
+        <Tab.Navigator>
+            <Tab.Screen name="home" component={HomeScreen} />
+            <Tab.Screen name="meetings" component={MeetingScreen} />
+            <Tab.Screen name="Settings" component={SettingsScreen} />
+        </Tab.Navigator>
     )
 };
 
