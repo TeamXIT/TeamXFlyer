@@ -1,5 +1,6 @@
 import { createStackNavigator } from '@react-navigation/stack';
 import React from 'react';
+import { Pressable, Alert, Image } from 'react-native';
 
 import { NavigationContainer } from '@react-navigation/native';
 
@@ -9,6 +10,7 @@ import RegisterScreen from './Screens/Authn/RegisterScreen';
 import SplashScreen from './Screens/Authn/SplashScreen';
 import Dashboard from './Screens/Dashboard/Dashboard';
 import VerificationScreen from './Screens/Authn/VerificationScreen';
+import Contacts from './Screens/Dashboard/contacts';
 
 const Stack = createStackNavigator();
 
@@ -57,6 +59,11 @@ function App(): React.JSX.Element {
           // Hiding header for Navigation Drawer
           options={{ headerShown: false }}
         />
+         <Stack.Screen name="Contacts" component={Contacts} options={{ headerTitleAlign: 'center', headerStyle: {
+            backgroundColor: '#fff'},headerTitleStyle: {
+              fontWeight: 'bold',color:'grey'},
+              headerLeft:() => (<Pressable onPress={()=>{Alert.alert('Menu','Hello')}}><Image source={require('./assets/hamberger.png')} style={{height:30,resizeMode:'cover',width:30}}/></Pressable>),
+              headerRight:() => (<Pressable onPress={()=>{Alert.alert('Menu','Hello')}}><Image source={require('./assets/search.png')} style={{height:30,resizeMode:'cover',width:30}}/></Pressable>)}} />
       </Stack.Navigator>
     </NavigationContainer>
   );
