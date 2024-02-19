@@ -1,4 +1,5 @@
 import { Pressable, StyleSheet, Text, View } from "react-native";
+import SettingItemComponent from "../molecule/SettingItemComponent";
 
 const HomeScreen = ({ navigation }) => {
 
