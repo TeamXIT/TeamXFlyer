@@ -1,6 +1,7 @@
 // ProfileScreen.js
 import React from 'react';
 import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native';
+import SettingItemComponent from '../molecule/SettingItemComponent';
 
 const ProfileScreen = () => {
   const handlePrivacyPress = () => {
@@ -32,9 +33,13 @@ const ProfileScreen = () => {
 
   };
 
+  const HandleOPress = (value: string) => {
+    console.log('Selected value is: ', value);
+  };
+
+
   const handleLightThemeImagePress = () => {
     console.log('Light theme image pressed');
-
   };
 
   return (
@@ -54,65 +59,53 @@ const ProfileScreen = () => {
         <Text style={styles.upgradeButtonText}>Upgrade to Pro</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity onPress={handlePrivacyPress} activeOpacity={0.5} style={styles.menuButton}>
-        <View style={styles.menuContent}>
-          <Image source={require('../../profileimage/privacy.png')} style={styles.smallImage} />
-          <Text style={[styles.menuButtonText, styles.privacyleftAligned]}>Privacy</Text>
-          <View style={styles.arrowContainer}>
-            <Image source={require('../../profileimage/angle-arrow.png')} style={styles.arrowIcon} />
-          </View>
-        </View>
-      </TouchableOpacity>
+      <SettingItemComponent
+        ImageOne={require('../../profileimage/privacy.png')}
+        Content={'Privacy'}
+        ImageTwo={require('../../profileimage/angle-arrow.png')}
+        handleOnPress={function (value: string): void {
+          HandleOPress(value);
+        }} />
 
-      <TouchableOpacity onPress={handlePurchaseHistoryPress} activeOpacity={0.5} style={styles.menuButton}>
-        <View style={styles.menuContent}>
-          <Image source={require('../../profileimage/purchasehistory.png')} style={styles.smallImage} />
-          <Text style={[styles.menuButtonText, styles.purchaseleftAligned]}>Purchase History</Text>
-          <View style={styles.arrowContainer}>
-            <Image source={require('../../profileimage/angle-arrow.png')} style={styles.arrowIcon} />
-          </View>
-        </View>
-      </TouchableOpacity>
+      <SettingItemComponent
+        ImageOne={require('../../profileimage/purchasehistory.png')}
+        Content={'Purchase History'}
+        ImageTwo={require('../../profileimage/angle-arrow.png')}
+        handleOnPress={function (value: string): void {
+          HandleOPress(value);
+        }} />
 
-      <TouchableOpacity onPress={handleHelpAndSupportPress} activeOpacity={0.5} style={styles.menuButton}>
-        <View style={styles.menuContent}>
-          <Image source={require('../../profileimage/help.png')} style={styles.smallImage} />
-          <Text style={[styles.menuButtonText, styles.helpleftAligned]}>Help and Support</Text>
-          <View style={styles.arrowContainer}>
-            <Image source={require('../../profileimage/angle-arrow.png')} style={styles.arrowIcon} />
-          </View>
-        </View>
-      </TouchableOpacity>
+      <SettingItemComponent
+        ImageOne={require('../../profileimage/help.png')}
+        Content={'Help and Support'}
+        ImageTwo={require('../../profileimage/angle-arrow.png')}
+        handleOnPress={function (value: string): void {
+          HandleOPress(value);
+        }} />
 
-      <TouchableOpacity onPress={handlesettingsPress} activeOpacity={0.5} style={styles.menuButton}>
-        <View style={styles.menuContent}>
-          <Image source={require('../../profileimage/settings.png')} style={styles.smallImage} />
-          <Text style={[styles.menuButtonText, styles.settingleftAligned]}>Settings</Text>
-          <View style={styles.arrowContainer}>
-            <Image source={require('../../profileimage/angle-arrow.png')} style={styles.arrowIcon} />
-          </View>
-        </View>
-      </TouchableOpacity>
+      <SettingItemComponent
+        ImageOne={require('../../profileimage/settings.png')}
+        Content={'Settings'}
+        ImageTwo={require('../../profileimage/angle-arrow.png')}
+        handleOnPress={function (value: string): void {
+          HandleOPress(value);
+        }} />
 
-      <TouchableOpacity onPress={handleInviteFriendPress} activeOpacity={0.5} style={styles.menuButton}>
-        <View style={styles.menuContent}>
-          <Image source={require('../../profileimage/invite.jpg')} style={styles.smallImage} />
-          <Text style={[styles.menuButtonText, styles.inviteleftAligned]}>Invite a Friend</Text>
-          <View style={styles.arrowContainer}>
-            <Image source={require('../../profileimage/angle-arrow.png')} style={styles.arrowIcon} />
-          </View>
-        </View>
-      </TouchableOpacity>
+      <SettingItemComponent
+        ImageOne={require('../../profileimage/invite.jpg')}
+        Content={'Invite a Friend'}
+        ImageTwo={require('../../profileimage/angle-arrow.png')}
+        handleOnPress={function (value: string): void {
+          HandleOPress(value);
+        }} />
 
-      <TouchableOpacity onPress={handleLogoutPress} activeOpacity={0.5} style={styles.menuButton}>
-        <View style={styles.menuContent}>
-          <Image source={require('../../profileimage/logout.png')} style={styles.smallImage} />
-          <Text style={[styles.menuButtonText, styles.logoutleftAligned]}>Logout</Text>
-          <View style={styles.arrowContainer}>
-            <Image source={require('../../profileimage/angle-arrow.png')} style={styles.arrowIcon} />
-          </View>
-        </View>
-      </TouchableOpacity>
+      <SettingItemComponent
+        ImageOne={require('../../profileimage/logout.png')}
+        Content={'Logout'}
+        ImageTwo={require('../../profileimage/angle-arrow.png')}
+        handleOnPress={function (value: string): void {
+          HandleOPress(value);
+        }} />
     </View>
   );
 };

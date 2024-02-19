@@ -1,10 +1,11 @@
 import React from 'react';
-import { FlatList, View, Text, Image, StyleSheet} from 'react-native';
+import { FlatList, StyleSheet } from 'react-native';
+import ContactComponent from '../molecule/ContactComponent';
 
 const data = [
   {
     id: '101',
-    Name: 'Elon Musk',
+    Name: 'Elon',
     Message: 'Hello, how are you?',
     image: require('../../assets/Users/Elon-Musk.jpg')
   },
@@ -38,33 +39,22 @@ const data = [
     Message: 'Hello, how are you?',
     image: require('../../assets/Users/jeff-BeZos.jpeg')
   },
-
 ];
 
 const renderItem = ({ item }) => (
-
-  <View style={styles.container}>
-    <View style={styles.item}>
-      <Image
-        style={styles.image}
-        source={item.image}
-      />
-      <View style={styles.textContainer}>
-        <Text style={styles.Name}>{item.Name}</Text>
-        <Text style={styles.message}>{item.Message}</Text>
-      </View>
-    </View>
-  </View>
-
+  <ContactComponent Id={item.id} Image={item.image} Name={item.Name} Message={item.Message} />
 );
 
 const Contacts = () => {
   return (
-    <FlatList
+
+
+    <FlatList style={{ flex: 1 }}
       data={data}
       renderItem={renderItem}
       keyExtractor={item => item.id.toString()}
     />
+
   );
 };
 

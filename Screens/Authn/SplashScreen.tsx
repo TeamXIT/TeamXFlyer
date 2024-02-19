@@ -12,7 +12,8 @@ const SplashScreen = ({ navigation }) => {
         //else send to Home Screen
         
         //AsyncStorage.removeItem('userid');
-        AsyncStorage.getItem('userid1').then((value) =>
+        //AsyncStorage.setItem('userid', "tirumal");
+        AsyncStorage.getItem('userid').then((value) =>
             navigation.replace(
                 value === null ? 'Authn' : 'Dashboard'
             ),
