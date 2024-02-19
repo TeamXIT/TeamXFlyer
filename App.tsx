@@ -1,6 +1,5 @@
 import { createStackNavigator } from '@react-navigation/stack';
 import React from 'react';
-import { Pressable, Alert, Image } from 'react-native';
 
 import { NavigationContainer } from '@react-navigation/native';
 
@@ -10,8 +9,6 @@ import RegisterScreen from './Screens/Authn/RegisterScreen';
 import SplashScreen from './Screens/Authn/SplashScreen';
 import Dashboard from './Screens/Dashboard/Dashboard';
 import VerificationScreen from './Screens/Authn/VerificationScreen';
-import Contacts from './Screens/Dashboard/Contacts';
-import ProfileScreen from './Screens/Dashboard/ProfileScreen';
 const Stack = createStackNavigator();
 
 const Authn = () => {
