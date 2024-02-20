@@ -11,7 +11,7 @@ const imageitemComponent = (props: ImageProps) => {
                 source={props.Image}
                 style={{ height: 90, width: 90 ,borderRadius:50}}>
             </Image>
-            <TouchableOpacity >
+            <TouchableOpacity onPress={()=>Alert.alert('Upload your photo')}>
                 <Image
                     source={require('../../images/cam.png')}
                     style={{ height: 30, width: 30,borderRadius:50,position:'absolute', top:-35,left:60 }}>
