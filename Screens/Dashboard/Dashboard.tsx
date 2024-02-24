@@ -5,7 +5,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeScreen from "./HomeScreen";
 import MeetingScreen from "./MeetingScreen";
 import SettingsScreen from "./SettingsScreen";
-import Contacts from "./Contacts"
+import Contacts from "./contacts"
 import ProfileScreen from "./ProfileScreen";
 
 
