@@ -2,57 +2,25 @@
 import React from 'react';
 import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native';
 import SettingItemComponent from '../molecule/SettingItemComponent';
+import ProfileComponent from '../molecule/ProfileComponent';
+import { useAppSelector } from '../Helper/Reducers/hooks';
 
 const ProfileScreen = () => {
-  const handlePrivacyPress = () => {
-    console.log('Privacy button pressed');
 
-  };
-
-  const handlePurchaseHistoryPress = () => {
-    console.log('Purchase History button pressed');
-
-  };
-
-  const handleHelpAndSupportPress = () => {
-    console.log('Help and Support button pressed');
-
-  };
-  const handlesettingsPress = () => {
-    console.log('settings button pressed');
-
-  };
-
-  const handleInviteFriendPress = () => {
-    console.log('Invite a Friend button pressed');
-
-  };
-
-  const handleLogoutPress = () => {
-    console.log('Logout button pressed');
-
-  };
-
+  const loginState = useAppSelector(state => state.ligin);
   const HandleOPress = (value: string) => {
-    console.log('Selected value is: ', value);
-  };
-
-
-  const handleLightThemeImagePress = () => {
-    console.log('Light theme image pressed');
+    console.log('Selected value Start: ', value);
+    console.log(loginState.data.employees)
+    console.log('Selected value end is: ', value);
   };
 
   return (
     <View style={styles.container}>
       <View style={styles.profileContainer}>
-        <TouchableOpacity onPress={handleLightThemeImagePress}>
-          <Image source={require('../../profileimage/lighttheme1.png')} style={styles.lightThemeImage} />
-        </TouchableOpacity>
-        <View style={styles.profilePictureContainer}>
-          <Image source={require('../../profileimage/profile.jpg')} style={styles.profilePicture} />
-        </View>
-        <Text style={styles.profileName}>Chaitanya</Text>
-        <Text style={styles.email}>janachaitanya1234@gamil.com</Text>
+        <ProfileComponent Image={require('../../profileimage/profile.jpg')} />
+        
+        <Text style={styles.profileName}>TeamX</Text>
+        <Text style={styles.email}>developer@teamx.in</Text>
       </View>
 
       <TouchableOpacity style={styles.upgradeButton} onPress={() => console.log('Upgrade to Pro')}>

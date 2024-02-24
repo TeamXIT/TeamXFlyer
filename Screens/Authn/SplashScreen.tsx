@@ -1,6 +1,8 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useEffect, useState } from "react";
-import { ActivityIndicator, StyleSheet, Image, View } from "react-native";
+import { ActivityIndicator, Image, View } from "react-native";
+import { styles } from "../Styles/Styles";
+
 
 const SplashScreen = ({ navigation }) => {
     const [animating, setAnimating] = useState(true);
@@ -35,21 +37,3 @@ const SplashScreen = ({ navigation }) => {
 }
 
 export default SplashScreen;
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        alignItems: "center",
-        justifyContent: "center",
-        backgroundColor: "#307ECC"
-    },
-    image: {
-        width: '90%',
-        resizeMode: "contain",
-        margin: 30
-    },
-    activityIndicator: {
-        alignItems: "center",
-        height: 100
-    }
-})
