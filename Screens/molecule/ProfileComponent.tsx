@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { View, Image, TouchableOpacity, Alert, StyleSheet } from "react-native"
-import ImagePicker from 'react-native-image-crop-picker';
+import { View, Image, TouchableOpacity, StyleSheet, Alert } from "react-native"
+import ImagePicker, { ImageOrVideo } from 'react-native-image-crop-picker';
 
 type profile = {
     Image: String;
@@ -10,15 +10,46 @@ const ProfileComponent = (field: profile) => {
     const [uri, setUri] = useState(field.Image);
 
     function handleSelectGallery(): void {
-        console.log("Image picker ref: ", ImagePicker);
-        // ImagePicker.openPicker({
-        //     width: 300,
-        //     height: 400,
-        //     cropping: true,
-        // }).then(image => {
-        //     setUri(image.path);
-        //     //props.onChange?.(image);
-        // });
+        Alert.alert('Select your option', 'Select one of the option to set your profile picture.', [
+            {
+                text: 'Open Camera',
+                onPress: () => {
+                    ImagePicker.openCamera({
+                        width: 300,
+                        height: 400,
+                        cropping: true,
+                    })
+                        .then(image => {
+                            setUri(image.path);
+                        });
+                },
+            },
+            {
+                text: 'Select Picture',
+                onPress: () => {
+                    ImagePicker.openPicker({
+                        width: 300,
+                        height: 400,
+                        cropping: true,
+                    }).then(image => {
+                        setUri(image.path);
+                    });
+                },
+            },
+            {
+                text: 'Select Video',
+                onPress: () => {
+                    ImagePicker.openCamera({
+                        mediaType: 'video',
+                      }).then(image => {
+                        console.log(image);
+                      });
+                }
+            },
+        ]);
+
+
+
     }
 
     return (

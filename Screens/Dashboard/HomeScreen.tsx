@@ -1,7 +1,16 @@
 import { Pressable, StyleSheet, Text, View } from "react-native";
-import SettingItemComponent from "../molecule/SettingItemComponent";
+import { useAppSelector } from "../Helper/Reducers/hooks";
+import { useEffect } from "react";
 
 const HomeScreen = ({ navigation }) => {
+
+    const loginState = useAppSelector(state => state.ligin);
+
+    useEffect(() => {
+        console.log('\n')
+        console.log("Home Page Value Data: ", loginState.data.employees);
+        console.log('\n')
+    }, [loginState.data.employees]);
 
     const handleOnPress = () => {
         console.log("On pressed");

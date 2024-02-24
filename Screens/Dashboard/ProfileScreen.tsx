@@ -3,11 +3,15 @@ import React from 'react';
 import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native';
 import SettingItemComponent from '../molecule/SettingItemComponent';
 import ProfileComponent from '../molecule/ProfileComponent';
+import { useAppSelector } from '../Helper/Reducers/hooks';
 
 const ProfileScreen = () => {
 
+  const loginState = useAppSelector(state => state.ligin);
   const HandleOPress = (value: string) => {
-    console.log('Selected value is: ', value);
+    console.log('Selected value Start: ', value);
+    console.log(loginState.data.employees)
+    console.log('Selected value end is: ', value);
   };
 
   return (

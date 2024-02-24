@@ -1,12 +1,24 @@
 import { Text, View, TouchableOpacity, TextInput, Alert, Pressable, } from 'react-native';
-import { createStackNavigator } from '@react-navigation/stack'
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { styles } from '../Styles/Styles';
-const Stack = createStackNavigator();
+import axios from 'axios';
+import { getEmployees } from '../Helper/Reducers/login/loginSlice';
+import { useAppDispatch, useAppSelector } from '../Helper/Reducers/hooks'
 
 const Login = ({ navigation }) => {
     const [mailID, setmailID] = useState('netus.et.malesuada@ornarelectusjusto.co.uk');
     const [password, setpassword] = useState('12345');
+
+    const dispatch = useAppDispatch();
+
+    const loginState = useAppSelector(state => state.ligin);
+
+    useEffect(() => {
+        console.log('\n')
+        console.log("Date change: ", loginState?.screen?.loading)
+        console.log("Return Data: ", loginState.data.employees);
+        console.log('\n')
+    }, [loginState.data.employees]);
 
     const onSubmit = () => {
         if (!mailID) {
@@ -17,65 +29,9 @@ const Login = ({ navigation }) => {
             Alert.alert('Invalid', 'Enter Password:');
             return;
         }
+        dispatch(getEmployees());
         navigation.replace("Dashboard");
-       //userLogin(mailID, password);
-
     }
-    const endPoint = 'https://reactnative.dev/movies.json';
-    const getUsers = async () => {
-        // Example endpoint
-        let result = await fetch(endPoint);
-        fetch(endPoint).then((result) => {
-            var responce = result;
-            fetch(endPoint).then((res) => {
-
-            })
-        });
-    }
-
-    const userLogin = (userName: string, password: string) => {
-     fetch(endPoint, {
-            method: "POST",
-            headers: {
-                Accept: 'application/json',
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                userName: userName,
-                password: password
-            })
-        }, ).then((resp) => {
-            //TODO Validation
-        });
-    }
-
-    const getUserDetail = async (userId: number) => {
-        fetch('https://teamx.in/api/user/search', {
-            method: "GET",
-            headers: {
-                Accept: 'application/json',
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                userId: userId
-            })
-        }).then((responce) => {
-            console.log("API Responce: ", responce);
-        })
-    }
-
-    const getMoviesFromApi = () => {
-        console.log("API Start");
-        return fetch(endPoint)
-            .then(response => response.json())
-            .then(json => {
-                console.log("API return Movies: ", json.movies);
-                navigation.replace("Dashboard");
-            })
-            .catch(error => {
-                console.error(error);
-            });
-    };
 
     return (
         <View style={styles.loginContainer}>
