@@ -7,7 +7,7 @@ import { useAppSelector } from '../Helper/Reducers/hooks';
 
 const ProfileScreen = () => {
 
-  const loginState = useAppSelector(state => state.ligin);
+  const loginState = useAppSelector(state => state.login);
   const HandleOPress = (value: string) => {
     console.log('Selected value Start: ', value);
     console.log(loginState.data.employees)

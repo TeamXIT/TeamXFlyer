@@ -4,7 +4,7 @@ import { useEffect } from "react";
 
 const HomeScreen = ({ navigation }) => {
 
-    const loginState = useAppSelector(state => state.ligin);
+    const loginState = useAppSelector(state => state.login);
 
     useEffect(() => {
         console.log('\n')

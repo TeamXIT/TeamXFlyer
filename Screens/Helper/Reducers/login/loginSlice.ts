@@ -3,18 +3,6 @@ import { Employees } from "./Model/Employee";
 import { User } from "./Model/User";
 import axios from "axios";
 
-const initialState: EmployeeState = {
-    screen: {
-        loading: false,
-        error: ""
-    },
-    data: {
-        employees: [],
-        accessToken: '',
-        user: []
-    }
-}
-
 type EmployeeState = {
     screen: {
         loading: boolean,
@@ -27,6 +15,17 @@ type EmployeeState = {
     }
 }
 
+const initialState: EmployeeState = {
+    screen: {
+        loading: false,
+        error: ""
+    },
+    data: {
+        employees: [],
+        accessToken: '',
+        user: []
+    }
+}
 
 const loginSlice = createSlice({
     name: "login",
@@ -50,10 +49,37 @@ export const {
     setEmployees
 } = loginSlice.actions;
 
-const apiConfig = {
-    header: {
-        'Content-Type': 'application/json'
-    }
+export const getLogin = () => (dispatch: Dispatch) => {
+    dispatch(setLoading(true));
+    const baseUrl = "https://dummy.restapiexample.com/api/v1/employees";
+    axios.get(baseUrl).then((responce) => {
+        dispatch(setEmployees(responce.data));
+        dispatch(setLoading(false));
+    }).catch((error) => {
+        dispatch(setError(error))
+    })
+}
+
+export const getRegistration = () => (dispatch: Dispatch) => {
+    dispatch(setLoading(true));
+    const baseUrl = "https://dummy.restapiexample.com/api/v1/employees";
+    axios.get(baseUrl).then((responce) => {
+        dispatch(setEmployees(responce.data));
+        dispatch(setLoading(false));
+    }).catch((error) => {
+        dispatch(setError(error))
+    })
+}
+
+export const getValidation = () => (dispatch: Dispatch) => {
+    dispatch(setLoading(true));
+    const baseUrl = "https://dummy.restapiexample.com/api/v1/employees";
+    axios.get(baseUrl).then((responce) => {
+        dispatch(setEmployees(responce.data));
+        dispatch(setLoading(false));
+    }).catch((error) => {
+        dispatch(setError(error))
+    })
 }
 
 export const getEmployees = () => (dispatch: Dispatch) => {

@@ -11,7 +11,7 @@ const Login = ({ navigation }) => {
 
     const dispatch = useAppDispatch();
 
-    const loginState = useAppSelector(state => state.ligin);
+    const loginState = useAppSelector(state => state.login);
 
     useEffect(() => {
         console.log('\n')
