@@ -12,6 +12,9 @@ import VerificationScreen from './Screens/Authn/VerificationScreen';
 
 import { Provider as ReduxProvider } from 'react-redux';
 import store from './Screens/Helper/Reducers/store';
+import { Pressable, Alert } from 'react-native';
+import flatList_ex from './Screens/Dashboard/FlatList';
+import sectionList_ex from './Screens/Dashboard/sectionList';
 const Stack = createStackNavigator();
 
 const Authn = () => {
@@ -60,6 +63,19 @@ function App(): React.JSX.Element {
             // Hiding header for Navigation Drawer
             options={{ headerShown: false }}
           />
+           <Stack.Screen 
+          name="FlatList" 
+          component={flatList_ex} 
+          options={  {title:'',headerLeft:() => (<Pressable onPress={()=>{Alert.alert('Back')}}><Image source={require('./assets/images/back.png')} style={{height:25,resizeMode:'cover',width:22}}/></Pressable>),
+          headerRight:() => (<Pressable onPress={()=>{Alert.alert('Notification')}}><Image source={require('./assets/images/bell.png')} style={{height:25,resizeMode:'cover',width:22}}/></Pressable>)}}
+          />
+          <Stack.Screen 
+          name="SectionList" 
+          component={sectionList_ex} 
+          options={  {title:'',headerLeft:() => (<Pressable onPress={()=>{Alert.alert('Back')}}><Image source={require('./assets/images/back.png')} style={{height:25,resizeMode:'cover',width:22}}/></Pressable>),
+          headerRight:() => (<Pressable onPress={()=>{Alert.alert('Notification')}}><Image source={require('./assets/images/bell.png')} style={{height:25,resizeMode:'cover',width:22}}/></Pressable>)}}
+          />
+          
         </Stack.Navigator>
       </NavigationContainer>
     </ReduxProvider>

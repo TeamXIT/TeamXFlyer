@@ -7,8 +7,14 @@ const RegistrationScreen = ({ navigation }) => {
             <TouchableOpacity onPress={() => { navigation.navigate('Contacts') }} style={styles.btn}>
                 <Text style={styles.btnTxt}>Contacts</Text>
             </TouchableOpacity>
-            <TouchableOpacity onPress={() => { navigation.navigate('Contacts') }} style={styles.btn}>
+            <TouchableOpacity onPress={() => { navigation.navigate('profile') }} style={styles.btn}>
                 <Text style={styles.btnTxt}>Profile</Text>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={()=>{navigation.navigate('FlatList')} }style={styles.btn}>
+            <Text style={styles.btnTxt}>FlatList</Text>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={()=>{navigation.navigate('SectionList')} }style={styles.btn}>
+            <Text style={styles.btnTxt}>SectionList</Text>
             </TouchableOpacity>
         </View>
     )

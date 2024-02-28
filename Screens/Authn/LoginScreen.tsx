@@ -38,7 +38,6 @@ const Login = ({ navigation }) => {
             <Text style={styles.content}>Welcome Back!</Text>
             <Text style={{ color: '#fff', fontSize: 18, letterSpacing: 1.5, marginBottom: 15, marginTop: 10 }}>Login to continue</Text>
             <TextInput placeholder='Mail ID' placeholderTextColor="#fff" style={styles.input} onChangeText={(mailID) => { setmailID(mailID) }}></TextInput>
-
             <TextInput placeholder='Password' placeholderTextColor="#fff" style={styles.input} onChangeText={(password) => { setpassword(password) }}></TextInput>
             <Pressable onPress={() => { Alert.alert('forgot Password') }}>
                 <Text style={{ color: '#000', fontSize: 18, textDecorationLine: 'underline', marginBottom: 25, marginTop: 10 }}>Forgot Password?</Text>
