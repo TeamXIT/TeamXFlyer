@@ -1,8 +1,10 @@
 import { AnyAction, combineReducers, configureStore } from "@reduxjs/toolkit";
 import loginSlice from "./../Reducers/login/loginSlice";
+import settingsSlice from "./settings/settingsSlice";
 
 const appReducer = combineReducers({
-login: loginSlice
+login: loginSlice,
+settings: settingsSlice
 });
 
 export type RootState = ReturnType<typeof appReducer>;

@@ -54,7 +54,7 @@ const ProfileComponent = (field: profile) => {
 
     return (
         <View style={styles.container}>
-            <Image style={styles.img} source={uri} />
+            <Image style={styles.img} source={require(uri.toString())} />
             <TouchableOpacity onPress={() => handleSelectGallery()} style={styles.smallbtn}>
                 <Image style={{ height: 35, width: 35 }} source={require('./../../assets/images/ic_camera.png')} />
             </TouchableOpacity>

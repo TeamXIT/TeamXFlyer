@@ -17,7 +17,7 @@ const ProfileScreen = () => {
   return (
     <View style={styles.container}>
       <View style={styles.profileContainer}>
-        <ProfileComponent Image={require('../../profileimage/profile.jpg')} />
+        <ProfileComponent Image={'../../profileimage/profile.jpg'} />
         
         <Text style={styles.profileName}>TeamX</Text>
         <Text style={styles.email}>developer@teamx.in</Text>
