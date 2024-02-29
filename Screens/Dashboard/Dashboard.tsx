@@ -1,12 +1,27 @@
+
 import { useEffect } from "react";
-import { Text } from "react-native";
+import { StyleSheet, Text, TouchableOpacity } from "react-native";
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import HomeScreen from "./HomeScreen";
+import MeetingScreen from "./MeetingScreen";
+import SettingsScreen from "./SettingsScreen";
+import Contacts from "./Contacts"
+import ProfileScreen from "./ProfileScreen";
 
-const Dashboard =() =>{
 
-
+const Tab = createBottomTabNavigator();
+const Dashboard = () => {
     return (
-        <Text>Dashboard</Text>
+        <Tab.Navigator>
+            <Tab.Screen name="home" component={HomeScreen} />
+            <Tab.Screen name="meetings" component={MeetingScreen} />
+            <Tab.Screen name="SettingsScreen" component={SettingsScreen} />
+            <Tab.Screen name="Contacts" component={Contacts} />
+            <Tab.Screen name="Profile" component={ProfileScreen} />
+        </Tab.Navigator>
     )
 };
-
 export default Dashboard;
+
+
+
