@@ -1,5 +1,6 @@
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
+
 const RegistrationScreen = ({ navigation }) => {
 
     return (
@@ -9,6 +10,9 @@ const RegistrationScreen = ({ navigation }) => {
             </TouchableOpacity>
             <TouchableOpacity onPress={() => { navigation.navigate('Contacts') }} style={styles.btn}>
                 <Text style={styles.btnTxt}>Profile</Text>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => { navigation.navigate('CoffeeClub') }} style={styles.btn}>
+                <Text style={styles.btnTxt}>Coffee club</Text>
             </TouchableOpacity>
         </View>
     )

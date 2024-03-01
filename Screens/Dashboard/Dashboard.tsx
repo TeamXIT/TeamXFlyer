@@ -6,7 +6,8 @@ import HomeScreen from "./HomeScreen";
 import MeetingScreen from "./MeetingScreen";
 import SettingsScreen from "./SettingsScreen";
 import Contacts from "./Contacts"
-import ProfileScreen from "./ProfileScreen";
+import ProfileScreen from "./CoffeeClub";
+import CoffeeClub from "./CoffeeClub";
 
 
 const Tab = createBottomTabNavigator();
@@ -17,7 +18,7 @@ const Dashboard = () => {
             <Tab.Screen name="meetings" component={MeetingScreen} />
             <Tab.Screen name="SettingsScreen" component={SettingsScreen} />
             <Tab.Screen name="Contacts" component={Contacts} />
-            <Tab.Screen name="Profile" component={ProfileScreen} />
+            <Tab.Screen name="CoffeeClub" component={CoffeeClub} />
         </Tab.Navigator>
     )
 };
